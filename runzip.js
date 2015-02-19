@@ -7,6 +7,7 @@ var Immutable = require('immutable');
 util.inherits(Runzip, events.EventEmitter);
 
 function Runzip(options) {
+  events.EventEmitter.call(this);
   this._filter = (options && options.filter) || function(entry) {
     return /\.zip$/.test(entry.fileName);
   };

@@ -1,12 +1,13 @@
 # Runzip
 
-a recursive unzip for node, based off of [yauzl](https://github.com/thejoshwolfe/yauzl)
+a recursive unzip for node, built on top of [yauzl](https://github.com/thejoshwolfe/yauzl)
 
 ## Usage
 
 ```js
 var unzip = require("runzip");
 var fs = require("fs");
+var mkdirp = require("mkdirp");
 
 function isZip(entry) {
   return /\.(zip|jar)$/.test(entry.fileName);
@@ -53,6 +54,18 @@ Just like [yauzl](https://github.com/thejoshwolfe/yauzl), but with an additional
 
 Just like [yauzl](https://github.com/thejoshwolfe/yauzl), but with an additional argument that is an options object accepting a `filter` option.
 
+### Class: ZipFile
+
+Same as [yauzl](https://github.com/thejoshwolfe/yauzl), but each `Entry` has an additional `nestedPath` property.
+
+### Class: Entry
+
+Same as [yauzl](https://github.com/thejoshwolfe/yauzl), but with an additional property:
+
+#### nestedPath
+
+`Array` of strings.
+This array contains the stack of filenames of the recursively nested zip files containing this entry.
 
 # License
 
