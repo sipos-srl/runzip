@@ -2,6 +2,8 @@
 
 a recursive unzip for node, built on top of [yauzl](https://github.com/thejoshwolfe/yauzl)
 
+[![NPM](https://nodei.co/npm/runzip.png)](https://nodei.co/npm/runzip/)
+
 ## Usage
 
 ```js
