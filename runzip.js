@@ -14,6 +14,10 @@ function Runzip(options) {
   this._liveZipfileCount = 0;
 }
 
+Runzip.prototype.openReadStream = function openReadStream(entry, cb) {
+  return entry.openReadStream(cb);
+};
+
 Runzip.prototype._unzip = function _unzip(zipfile) {
   this._liveZipfileCount = 1;
   this._unzipNested(zipfile, new Immutable.List());
