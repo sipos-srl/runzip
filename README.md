@@ -22,7 +22,7 @@ runzip.open("path/to/file.zip", { filter: isZip }, function(err, zipfile) {
       // directory file names end with '/'
       return;
     }
-    zipfile.openReadStream(entry, function(err, readStream) {
+    entry.openReadStream(function(err, readStream) {
       if (err) throw err;
       // entry.nestedPath is an array of the recursively nested zip filenames
       var outputDir = entry.nestedPath.join("/");
@@ -62,12 +62,16 @@ Same as [yauzl](https://github.com/thejoshwolfe/yauzl), but each `Entry` has an 
 
 ### Class: Entry
 
-Same as [yauzl](https://github.com/thejoshwolfe/yauzl), but with an additional property:
+Same as [yauzl](https://github.com/thejoshwolfe/yauzl), but with an additional property and an additional method.
 
 #### nestedPath
 
 `Array` of strings.
 This array contains the stack of filenames of the recursively nested zip files containing this entry.
+
+#### openReadStream(callback)
+
+Produces a readable stream for this entry's contents, similar to `zipfile.openReadStream(entry, callback)` in [yauzl](https://github.com/thejoshwolfe/yauzl).
 
 # License
 
