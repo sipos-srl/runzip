@@ -49,6 +49,9 @@ Runzip.prototype._unzipNested = function _unzip(zipfile, nestedPath) {
       });
     } else {
       entry.nestedPath = nestedPath.toArray();
+      entry.openReadStream = function(cb) {
+        zipfile.openReadStream(entry, cb);
+      };
       self.emit('entry', entry);
     }
   });
