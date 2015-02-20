@@ -1,6 +1,6 @@
 {
   "name": "runzip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Recursive Unzip",
   "main": "runzip.js",
   "scripts": {
@@ -15,7 +15,6 @@
   "dependencies": {
     "yauzl": "2.2.1",
     "concat-stream": "1.4.7",
-    "fstream": "1.0.4",
     "immutable": "3.6.2"
   },
   "bugs": {
