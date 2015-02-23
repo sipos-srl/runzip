@@ -70,7 +70,7 @@ Runzip.prototype._unzipNested = function _unzip(zipfile, nestedPath) {
 
 function makeZipfileHandler(options, callback) {
   return function(err, zipfile) {
-    if (err) throw err;
+    if (err) return callback(err);
     var r = new Runzip(options);
     r._unzip(zipfile);
     callback(null, r);
