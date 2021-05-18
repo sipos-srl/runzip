@@ -13,7 +13,7 @@
   "author": "Dave Herman <dherman@mozilla.com>",
   "license": "MIT",
   "dependencies": {
-    "yauzl": "2.2.1",
+    "yauzl": "2.10.0",
     "concat-stream": "1.4.7",
     "immutable": "3.6.2"
   },
